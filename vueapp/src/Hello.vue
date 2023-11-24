@@ -40,6 +40,7 @@
 
 
 <script>
+import { socket } from "@/socket";
 export default {
    data(){
      return{
@@ -52,6 +53,23 @@ export default {
        da:false
      }
    },
+
+   sockets: {
+    connect() {
+      console.log('Connected to server');
+    },
+    disconnect() {
+      console.log('Disconnected from server');
+    }
+  },
+
+  mounted: function() {
+          socket.on('getData', function(datasocket) {
+            console.log('sdsddsdsd');
+            this.posts.push(datasocket.content)
+          }.bind(this))
+        },
+
 
    methods:{
      getData(){
@@ -93,6 +111,7 @@ export default {
            console.log(note);
            this.title='';
            this.content='';
+           getData();
            this.$router.push('/home')
          }).catch((err)=>{
          this.err=true

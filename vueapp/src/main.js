@@ -3,10 +3,17 @@ import App from "./App.vue";
 import VueRouter from "vue-router";
 import VueResource from "vue-resource";
 import routes from "./router";
+import socketio from 'socket.io';
+import VueSocketIO from 'vue-socket.io';
 
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+
+
+Vue.use(new VueSocketIO({
+  connection: 'http://localhost:8080'
+}));
 
 const router = new VueRouter({
   mode: "history",

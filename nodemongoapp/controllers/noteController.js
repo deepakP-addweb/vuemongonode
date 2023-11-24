@@ -3,7 +3,7 @@
 var mongoose = require('mongoose'),
     Note = mongoose.model('Notes');
 
-
+//Get All Notes Data
 exports.getNotes = async (req, res) => {
         try {
           Note.find()
@@ -32,6 +32,7 @@ exports.getNotes = async (req, res) => {
         }
 }
 
+// Create New Record in Notes
 exports.createNote = async (req, res) => {
 
     try {
@@ -67,6 +68,7 @@ exports.createNote = async (req, res) => {
     }
   }
 
+// Read Specific Note
 exports.readNote = async function (req, res) {
 
     Note.findById(req.params.noteId, function (err, note) {

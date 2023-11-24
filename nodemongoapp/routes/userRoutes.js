@@ -1,5 +1,6 @@
 'use strict';
 
+const userList = require("../controllers/userController");
 module.exports = function (app) {
     var userList = require('../controllers/userController');
     var noteList = require('../controllers/noteController');
@@ -21,4 +22,9 @@ module.exports = function (app) {
     app.route('notes/:noteId')
         .get(noteList.readNote);
 
+    app.route("/users/generateToken")
+        .post(userList.generateToken);
+
+    app.route("/users/validateToken")
+        .get(userList.validateToken);
 };
