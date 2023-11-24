@@ -1,9 +1,9 @@
 {
-  "name": "vueauth",
-  "description": "A Vue.js project",
-  "version": "1.0.0",
-  "author": "saigowthamr <saigowthamr@gmail.com>",
-  "license": "MIT",
+  "name": "Vue Notes App",
+  "description": "Addweb App",
+  "version": "1.0",
+  "author": "deepk",
+  "license": "Free",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
